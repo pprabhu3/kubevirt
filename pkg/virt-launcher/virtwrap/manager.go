@@ -1165,6 +1165,7 @@ func (l *LibvirtDomainManager) SyncVMI(vmi *v1.VirtualMachineInstance, allowEmul
 	defer l.domainModifyLock.Unlock()
 
 	logger := log.Log.Object(vmi)
+	logger.V(1).Infof("Debug: Reached SyncVMI function for VMI = %s", vmi.Name)
 
 	domain := &api.Domain{}
 
